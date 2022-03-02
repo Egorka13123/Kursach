@@ -303,12 +303,9 @@ eta = [Calculate_eta(N_e = Ne, p_0 = p0, T_0 = T0, p_pp = p, T_pp = Tpp, p_k = p
 G0 = [Calculate_G0(N_e = Ne, p_0 = p0, T_0 = T0, p_pp = p, T_pp = Tpp, p_k = pk, T_pv = Tpv) for p in ppp]
 Gk = [Calculate_Gk(N_e=Ne, p_0=p0, T_0=T0, p_pp=p, T_pp=Tpp, p_k=pk, T_pv=Tpv) for p in ppp]
 
-ppp_eta2=pd.DataFrame({
-                   "eta, %": (max(eta)),
-                   "G_0, кг/с": (G0),
-                   "G_k, кг/с": (Gk)
-                   })
-ppp_eta2
+
+
+
 
 itog=pd.DataFrame({
 "eta_ir": (eta),
@@ -393,4 +390,7 @@ for x, y, ind in zip([point_1t.s, point_0_d.s], [point_1t.h, point_0_d.h], ['{1�
 
 st.pyplot(fighs)
 
+
 itog
+st.write("MAX KPD")
+itog.iloc[3:4]
